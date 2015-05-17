@@ -1,0 +1,84 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:paddingTop="20dp"
+    android:background="#ffade3ff">
+    <TextView android:text="@string/config_play" android:id="@+id/headline"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="30dp"
+        android:textColor="#ff9e9e9e"
+        android:textStyle="bold|normal" />
+    <TextView android:id="@+id/seekBarXtxt" android:text="Filas"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="60dp"
+        android:textColor="#ff9e9e9e"
+        android:textStyle="bold|normal" />
+    <SeekBar android:id="@+id/seekBarX"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:max="6">
+    </SeekBar>
+    <TextView android:id="@+id/seekBarYtxt" android:text="Columnas"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold|normal"
+        android:textColor="#ff9e9e9e" />
+    <SeekBar android:id="@+id/seekBarY"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:max="6">
+    </SeekBar>
+    <TextView android:id="@+id/seekBarColorstxt" android:text="Tramas"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold|normal"
+        android:textColor="#ff9e9e9e" />
+    <SeekBar android:id="@+id/seekBarColors"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:max="5">
+    </SeekBar>
+    <!--otras opciones-->
+    <RadioGroup android:id="@+id/RadioGroup01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <RadioButton android:text="@string/radio_color" android:id="@+id/rdColors"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#ff9e9e9e"
+            android:textStyle="bold|normal" />
+        <RadioButton android:text="@string/radio_number" android:id="@+id/rdNumbers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:textStyle="bold|normal"
+            android:textColor="#ff9e9e9e" />
+    </RadioGroup>
+    <!--otras opciones-->
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <CheckBox android:text="@string/check_sound" android:id="@+id/checkBoxSound"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold|normal"
+            android:textColor="#ff9e9e9e">
+        </CheckBox>
+        <CheckBox android:text="@string/check_vibrate" android:id="@+id/checkBoxVibrate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#ff9e9e9e"
+            android:textStyle="bold|normal">
+        </CheckBox>
+    </LinearLayout>
+    <Button android:text="@string/startPlay" android:id="@+id/startBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center|fill_horizontal|center_horizontal" />
+</LinearLayout>
