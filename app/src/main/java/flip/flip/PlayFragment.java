@@ -37,10 +37,71 @@ public class PlayFragment extends Fragment {
         TextView headline = (TextView) rootView.findViewById(R.id.headline);
         headline.append(" " + article);
 
+        //botón de inicio de partida
+        Button button = (Button) rootView.findViewById(R.id.startBtn);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startPlay();
+            }
+        });
+        //control número de celdas horizontales
+        SeekBar xTiles = (SeekBar) rootView.findViewById(R.id.seekBarX);
+        xTiles.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                updateXTiles(seekBar.getProgress());
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+            }
+        });
+        updateXTiles(xTiles.getProgress());
+        //control número de celdas verticales
+        SeekBar yTiles = (SeekBar)rootView.findViewById(R.id.seekBarY);
+        yTiles.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                updateYTiles(seekBar.getProgress());
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+            }
+        });
+        updateYTiles(yTiles.getProgress());
+        //barra para las tramas
+        SeekBar colors = (SeekBar)rootView.findViewById(R.id.seekBarColors);
+        colors.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                updateColors(seekBar.getProgress());
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+            }
+        });
+        updateColors(colors.getProgress());
+
         return rootView;
     }
 
 
+    /*
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -106,6 +167,8 @@ public class PlayFragment extends Fragment {
         });
         updateColors(colors.getProgress());
     }
+    */
+
     private void updateXTiles(int progress){
         TextView tv = (TextView)rootView.findViewById(R.id.seekBarXtxt);
         tv.setText(getString(R.string.num_elem_x) + " " + (progress + 3));
